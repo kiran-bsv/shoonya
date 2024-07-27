@@ -54,6 +54,7 @@ class Bookings(db.Model):
     payment_details = db.Column(db.String(255), nullable=False)
     booking_date = db.Column(db.Integer, default=lambda: int(time.time()), nullable=False)  #  Unix timestamp
 
+    @property
     def serialize(self):
         return {
             "booking_id": self.id,

@@ -29,7 +29,7 @@ def do_this():
         retreatList = response.json()
 
         for retreat in retreatList:
-            axios.post("http://127.0.0.1:5000/retreat", json=retreat)
+            axios.post("https://shoonya.onrender.com/retreat", json=retreat)
         return "Updated the table", 200
     
     except Exception as e:
@@ -41,5 +41,6 @@ if __name__ == "__main__":
     # app = create_app()
     with app.app_context():
         db.create_all()
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+    # app.run()
